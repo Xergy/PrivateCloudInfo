@@ -110,7 +110,7 @@ foreach($Server in $Servers) { #Where $Objects is a collection of objects to pro
                         } | where-object {$_.FreeGB -and $_.UsedGB } 
                 
                     #Filtering 
-                    $Nics_Filtered = $Nics | Select-Object ComputerName,Name,Description,IPAddress,Mac,Status,LinkSpeed,DriverVersion,DHCPEnabled
+                    $Nics_Filtered = $Nics | Select-Object ComputerName,Name,Description,IPAddress,Mac,Status,ConnectionState,LinkSpeed,DriverVersion,DHCPEnabled
                     $Disks_Filtered = $Disks | Select-Object ComputerName,Name,SizeGB,UsedGB,FreeGB        
                 
                     $NowStr = (Get-Date -Format s) -replace ":","."
